@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__
+.ipynb_checkpoints
+wandb/
+artifacts/
+llama-2-7b*
+llama-2-models
+llama-3-models
+shape-feature-predictor-debug/*
+src/llama_recipes/datasets/samsum_dataset_zylyu/data/*
+src/llama_recipes/datasets/instuct2code_dataset/data/*
+src/llama_recipes/datasets/shape2code_dataset/data
+npz_othe*/
+ossutil*.txt
+
+recontruction_exps

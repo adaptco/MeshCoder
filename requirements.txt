@@ -1,0 +1,17 @@
+torch>=2.0.1
+accelerate
+appdirs
+loralib
+bitsandbytes
+black
+black[jupyter]
+datasets==3.6.0
+fire
+peft
+transformers==4.50.0
+sentencepiece
+py7zr
+scipy
+optimum
+matplotlib
+gradio
