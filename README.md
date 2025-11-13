@@ -66,8 +66,8 @@ data.npz \
 ### Single GPU inference
 Run the following command to performance inference on given point clouds:
 ```
-python -m llama_recipes.inference_shape2code \
-    inference_shape2code_point_input.py \
+cd recipes/inference/local_inference/custom_inference
+python inference_shape2code_point_input.py \
     --model_name MeshCoder/llama-3-models/Llama3.2-1B \
     --peft_model MeshCoder/llama-3-models/object_to_code_model \
     --file_start_idx 0 --file_end_idx 10000000  \
@@ -85,13 +85,14 @@ python -m llama_recipes.inference_shape2code \
 Setup the environment variables NODE_RANK, MASTER_ADDR, MASTER_PORT according to your inference platform.
 Below is an example to inference the model with 4*8=32 GPUs.
 ```
+cd recipes/inference/local_inference/custom_inference
 torchrun \
     --nnodes=4 \
     --nproc_per_node=8 \
     --node_rank=$NODE_RANK \
     --master_addr=$MASTER_ADDR \
     --master_port=$MASTER_PORT  \
-    -m llama_recipes.inference_shape2code \
+    inference_shape2code_point_input.py \
     --model_name MeshCoder/llama-3-models/Llama3.2-1B \
     --peft_model MeshCoder/llama-3-models/object_to_code_model \
     --file_start_idx 0 --file_end_idx 10000000  \
