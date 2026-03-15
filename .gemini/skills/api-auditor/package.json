@@ -1,0 +1,8 @@
+{
+  "name": "api-auditor",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
+}

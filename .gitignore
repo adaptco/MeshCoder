@@ -14,3 +14,4 @@ npz_othe*/
 ossutil*.txt
 
 recontruction_exps
+.gemini/**/node_modules/

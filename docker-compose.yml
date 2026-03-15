@@ -1,0 +1,34 @@
+services:
+  meshcoder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: meshcoder
+    # Enable GPU access and set resource limits
+    deploy:
+      resources:
+        limits:
+          memory: 8g
+        reservations:
+          memory: 1g
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    # Mount volumes for development (hot-reloading)
+    volumes:
+      - ./src:/app/src
+      - ./recipes:/app/recipes
+      - ./scripts:/app/scripts
+    # Run interactive session
+    stdin_open: true
+    tty: true
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+networks:
+  default:
+    name: meshcoder_network

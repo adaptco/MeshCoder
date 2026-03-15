@@ -1,62 +1,58 @@
 {
-    "   {"name": "Attach to Edge",
-    "port": 9222,
-    "request": "attach",
-    "type": "msedge",
-    "webRoot": "${workspaceFolder}"
-},
-{
-    "type": "pwa-msedge",
-    "name": "Launch Microsoft Edge",
-    "request": "launch",
-    "runtimeArgs": [
-        "--headless",
-        "--disable-gpu",
-        "--remote-debugging-port=9222"
-    ],
-    "url": "/home/eqhspam/.antigravity-server/extensions/ms-edgedevtools.vscode-edge-devtools-2.1.10-universal/out/startpage/index.html",
-    "presentation": {
-        "hidden": true
-    }
-},
-{
-    "type": "pwa-msedge",
-    "name": "Launch Microsoft Edge in headless mode",
-    "request": "launch",
-    "runtimeArgs": [
-        "--headless",
-        "--disable-gpu",
-        "--remote-debugging-port=9222"
-    ],
-    "url": "/home/eqhspam/.antigravity-server/extensions/ms-edgedevtools.vscode-edge-devtools-2.1.10-universal/out/startpage/index.html",
-    "presentation": {
-        "hidden": true
-    }
-},
-{
-    "type": "vscode-edge-devtools.debug",
-    "name": "Open Edge DevTools",
-    "request": "attach",
-    "url": "/home/eqhspam/.antigravity-server/extensions/ms-edgedevtools.vscode-edge-devtools-2.1.10-universal/out/startpage/index.html",
-    "presentation": {
-        "hidden": true
-    }
-}
-],
-"compounds": [
-{
-    "name": "Launch Edge Headless and attach DevTools",
+    "version": "0.2.0",
     "configurations": [
-        "Launch Microsoft Edge in headless mode",
-        "Open Edge DevTools"
+        {
+            "name": "Python: MeshCoder Inference",
+            "type": "python",
+            "request": "launch",
+            "program": "recipes/inference/local_inference/custom_inference/inference_shape2code_point_input.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--model_name",
+                "llama-3-models/Llama3.2-1B",
+                "--peft_model",
+                "llama-3-models/object_to_code_model",
+                "--npz_data_file",
+                "data/sample.npz",
+                "--code_save_file",
+                "res/code.py",
+                "--batch_size",
+                "8",
+                "--visualization",
+                "--max_new_tokens",
+                "5000"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Attach to Edge",
+            "port": 9222,
+            "request": "attach",
+            "type": "msedge",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "msedge",
+            "name": "Launch Microsoft Edge",
+            "request": "launch",
+            "runtimeArgs": [
+                "--headless",
+                "--disable-gpu",
+                "--remote-debugging-port=9222"
+            ],
+            "url": "http://localhost:8080",
+            "presentation": {
+                "hidden": true
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch Edge and attach DevTools",
+            "configurations": [
+                "Launch Microsoft Edge",
+                "Attach to Edge"
+            ]
+        }
     ]
-},
-{
-    "name": "Launch Edge and attach DevTools",
-    "configurations": [
-        "Launch Microsoft Edge",
-        "Open Edge DevTools"
-    ]
-}
-]
 }
