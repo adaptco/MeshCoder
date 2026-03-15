@@ -16,5 +16,11 @@ This document defines the Agent-to-Agent (A2A) network capabilities for the Mesh
 - **Capability:** Validates URL availability, status codes, and latency.
 - **Reference:** [.gemini/skills/api-auditor/SKILL.md](file:///home/eqhspam/.antigravity-server/extensions/MeshCoder/.gemini/skills/api-auditor/SKILL.md)
 
+### @blender-agent
+- **Role:** 3D Environment Engineer
+- **Specialization:** Procedural Asset Generation
+- **Capability:** Uses MeshCoder to generate Blender assets and coordinates ML Ops for game environments.
+- **Reference:** [.gemini/skills/blender-agent/SKILL.md](file:///home/eqhspam/.antigravity-server/extensions/MeshCoder/.gemini/skills/blender-agent/SKILL.md)
+
 ## Interaction Protocol
 Agents in this network interact via structured function calls. See individual skill cards for parameter schemas.
