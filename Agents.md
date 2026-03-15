@@ -4,6 +4,12 @@ This document defines the Agent-to-Agent (A2A) network capabilities for the Mesh
 
 ## Active Agents
 
+### @orchestrator
+- **Role:** Agent Manager / Orchestrating Agent
+- **Specialization:** Task Decomposition & Coordination
+- **Capability:** Manages the A2A network and tracks tasks across workspaces.
+- **Reference:** [.gemini/skills/orchestrator/SKILL.md](file:///home/eqhspam/.antigravity-server/extensions/MeshCoder/.gemini/skills/orchestrator/SKILL.md)
+
 ### @api-auditor
 - **Role:** QA & Reliability Engineer
 - **Specialization:** API Endpoint Auditing

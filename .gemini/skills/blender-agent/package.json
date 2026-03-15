@@ -1,13 +1,12 @@
 {
-  "name": "api-auditor",
+  "name": "blender-agent",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "start": "node mcp_server.js"
   },
-  "devDependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.1",
-    "@types/node": "^22.0.0"
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1"
   }
 }
