@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "Python: MeshCoder Inference",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "recipes/inference/local_inference/custom_inference/inference_shape2code_point_input.py",
             "console": "integratedTerminal",
