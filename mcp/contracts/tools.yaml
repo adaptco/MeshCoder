@@ -1,0 +1,125 @@
+tools:
+  - name: search_web
+    description: "Search the web for real-time information with multi-engine fallback."
+    input_schema:
+      type: object
+      properties:
+        query:
+          type: string
+          description: "The search query"
+        top_k:
+          type: integer
+          default: 5
+          description: "Number of results to return"
+      required:
+        - query
+  
+  - name: fetch_page
+    description: "Extract clean content from a URL using Firecrawl/Playwright."
+    input_schema:
+      type: object
+      properties:
+        url:
+          type: string
+          description: "The URL to fetch"
+      required:
+        - url
+
+  - name: store_state
+    description: "Save agent state or reasoning chunks to Parquet for orchestration persistence."
+    input_schema:
+      type: object
+      properties:
+        agent_id:
+          type: string
+        state_data:
+          type: object
+          description: "Key-value pairs of state information"
+        namespace:
+          type: string
+          default: "default"
+      required:
+        - agent_id
+        - state_data
+
+  - name: query_vector
+    description: "Query the RAG system for context using vector similarity."
+    input_schema:
+      type: object
+      properties:
+        query:
+          type: string
+        top_k:
+          type: integer
+          default: 5
+        domain:
+          type: string
+          description: "Specific domain to query (e.g., 'blender', 'api-audits')"
+      required:
+        - query
+
+  - name: ingest_codebase
+    description: "Recursively scan and embed the codebase into the Parquet state space for RAG-based context."
+    input_schema:
+      type: object
+      properties:
+        root_path:
+          type: string
+        domain:
+          type: string
+          default: "codebase"
+      required:
+        - root_path
+
+  - name: list_emails
+    description: "List recent emails from Gmail using OAuth."
+    input_schema:
+      type: object
+      properties:
+        max_results:
+          type: integer
+          default: 10
+        query:
+          type: string
+          description: "Search query for filtering emails"
+
+  - name: read_email
+    description: "Read the content of a specific email by ID."
+    input_schema:
+      type: object
+      properties:
+        email_id:
+          type: string
+      required:
+        - email_id
+
+  - name: send_email
+    description: "Send an email via Gmail."
+    input_schema:
+      type: object
+      properties:
+        to:
+          type: string
+        subject:
+          type: string
+        body:
+          type: string
+      required:
+        - to
+        - subject
+        - body
+
+  - name: generate_spatial_tensor
+    description: "Map a list of text queries to 3D tensors for CAD environment embodiment."
+    input_schema:
+      type: object
+      properties:
+        text_queries:
+          type: array
+          items:
+            type: string
+        domain:
+          type: string
+          default: "default"
+      required:
+        - text_queries

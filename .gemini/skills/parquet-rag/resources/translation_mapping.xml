@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translation_mappings>
+    <compiler name="mesh-compiler">
+        <language source="english" target="blender_python">
+            <function name="translate_to_bpy" module="compilers.mesh" />
+        </language>
+        <language source="pointcloud" target="structured_mesh">
+            <function name="meshcoder_algorithm" module="compilers.mesh" />
+        </language>
+    </compiler>
+    <compiler name="logic-compiler">
+        <language source="dmn_json" target="arbitration_matrix">
+            <function name="map_dmn_to_xml" module="compilers.logic" />
+        </language>
+    </compiler>
+</translation_mappings>

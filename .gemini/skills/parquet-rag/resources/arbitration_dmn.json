@@ -1,0 +1,24 @@
+{
+  "name": "ManagingAgentArbitration",
+  "decisionTables": [
+    {
+      "id": "arbitration_layer",
+      "inputs": ["task_type", "confidence_score"],
+      "outputs": ["action", "reasoning_chunk"],
+      "rules": [
+        {
+          "input": ["mesh_generation", ">0.8"],
+          "output": ["execute_meshcoder", "High confidence: Proceeding with direct generation"]
+        },
+        {
+          "input": ["mesh_generation", "<=0.8"],
+          "output": ["request_clarification", "Low confidence: Need user guidance for mesh structure"]
+        },
+        {
+          "input": ["translation", "any"],
+          "output": ["lookup_xml_mapping", "Delegating to XML translation functions"]
+        }
+      ]
+    }
+  ]
+}

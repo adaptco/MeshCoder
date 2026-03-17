@@ -1,0 +1,12 @@
+{
+  "allowed_extensions": [
+    "MeshCoder",
+    "parquet-rag",
+    "api-auditor",
+    "blender-agent",
+    "orchestrator",
+    "mesh-coder-host"
+  ],
+  "policy": "strict",
+  "description": "Allowlist for Antigravity Agent extensions in the MeshCoder ecosystem."
+}

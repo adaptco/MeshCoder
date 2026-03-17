@@ -1,0 +1,150 @@
+{
+  "title": "MCPTools",
+  "type": "object",
+  "definitions": {
+    "SearchWebInput": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "The search query"
+        },
+        "top_k": {
+          "type": "integer",
+          "default": 5,
+          "description": "Number of results to return"
+        }
+      },
+      "required": [
+        "query"
+      ]
+    },
+    "FetchPageInput": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The URL to fetch"
+        }
+      },
+      "required": [
+        "url"
+      ]
+    },
+    "StoreStateInput": {
+      "type": "object",
+      "properties": {
+        "agent_id": {
+          "type": "string"
+        },
+        "state_data": {
+          "type": "object",
+          "description": "Key-value pairs of state information"
+        },
+        "namespace": {
+          "type": "string",
+          "default": "default"
+        }
+      },
+      "required": [
+        "agent_id",
+        "state_data"
+      ]
+    },
+    "QueryVectorInput": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string"
+        },
+        "top_k": {
+          "type": "integer",
+          "default": 5
+        },
+        "domain": {
+          "type": "string",
+          "description": "Specific domain to query (e.g., 'blender', 'api-audits')"
+        }
+      },
+      "required": [
+        "query"
+      ]
+    },
+    "IngestCodebaseInput": {
+      "type": "object",
+      "properties": {
+        "root_path": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string",
+          "default": "codebase"
+        }
+      },
+      "required": [
+        "root_path"
+      ]
+    },
+    "ListEmailsInput": {
+      "type": "object",
+      "properties": {
+        "max_results": {
+          "type": "integer",
+          "default": 10
+        },
+        "query": {
+          "type": "string",
+          "description": "Search query for filtering emails"
+        }
+      }
+    },
+    "ReadEmailInput": {
+      "type": "object",
+      "properties": {
+        "email_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email_id"
+      ]
+    },
+    "SendEmailInput": {
+      "type": "object",
+      "properties": {
+        "to": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "to",
+        "subject",
+        "body"
+      ]
+    },
+    "GenerateSpatialTensorInput": {
+      "type": "object",
+      "properties": {
+        "text_queries": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "domain": {
+          "type": "string",
+          "default": "default"
+        }
+      },
+      "required": [
+        "text_queries"
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "Agent Kernel",
+			"path": "/mnt/c/Users/eqhsp/agents"
+		},
+		{
+			"name": "Projects Root",
+			"path": "/mnt/c/Users/eqhsp/Projects"
+		}
+	],
+	"settings": {
+		"antigravity.workspace.autoInitialize": true,
+		"antigravity.workspace.stable": true,
+		"antigravity.extensions.allowlistPath": "./mcp/allowlist.json"
+	}
+}

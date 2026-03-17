@@ -1,0 +1,34 @@
+# Agent Infrastructure-as-Code (IaC) Manifest
+# This file defines the agents as persistent context providers.
+
+agents:
+  - id: "@vector-nexus"
+    type: "context-anchor"
+    namespace: "codebase"
+    auto_ingest: true
+    context_window:
+      dynamic_rag: true
+      top_k: 10
+      window_size_tokens: 4096
+
+  - id: "@codebase_investigator[Ralph]"
+    type: "forensics-service"
+    sync_channels: ["gmail", "parquet"]
+    auto_report: true
+    state_retention: "persistent"
+
+  - id: "@blender-agent"
+    type: "spatial-engine"
+    tensor_domain: "default"
+    projection: "pca-3d"
+    visualization: "manifest-geometry"
+
+infrastructure:
+  storage:
+    type: "parquet-mesh"
+    base_path: "/mnt/c/Users/eqhsp/agents/state"
+  
+  inter_op:
+    protocol: "A2A/MCP"
+    gateway: "http://localhost:8004"
+    stabilization: "active_context_injection"
