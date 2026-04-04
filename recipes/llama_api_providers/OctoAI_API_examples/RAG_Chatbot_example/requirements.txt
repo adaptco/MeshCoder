@@ -1,5 +1,5 @@
 gradio==4.16.0
-pypdf==4.0.0
+pypdf==6.9.2
 langchain==0.1.7
 sentence-transformers==2.2.2
 faiss-cpu==1.7.4
