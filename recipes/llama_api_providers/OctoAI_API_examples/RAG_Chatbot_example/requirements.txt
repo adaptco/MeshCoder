@@ -1,7 +1,7 @@
-gradio==4.16.0
-pypdf==4.0.0
-langchain==0.1.7
+gradio==6.7.0
+pypdf==6.10.0
+langchain==0.2.5
 sentence-transformers==2.2.2
 faiss-cpu==1.7.4
-text-generation==0.6.1
+text-generation==0.7.0
 octoai-sdk==0.8.3
